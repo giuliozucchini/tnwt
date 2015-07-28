@@ -17,8 +17,13 @@
 	}
 
 
-	body {
-      background-image: url("/assets/fond1.jpg");
+	.background_home {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      background-image: url("/assets/fond6.jpg");
       -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;

@@ -31,12 +31,6 @@ input {
 	-webkit-border-radius:15px; 
 }
 
-.navbar-right {
-	padding-right:2%;
-	background-color: white;
-}
-
-
 .navbar-fixed-bottom {
   height: 10px;
 }
@@ -46,7 +40,7 @@ input {
 	bottom: 0;
 	right: 0;
 	padding-right: 1%;
-	color: white;
+	color: white;	
 }
 
 .mymodal {
@@ -59,3 +53,19 @@ div.alert-success {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.navbar-custom {
+	padding-right:2%;
+	background-color: white;
+}
+
+#footer {
+  height: 20px;
+  background-color: #F0F0F0;
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+}
+
+

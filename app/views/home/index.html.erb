@@ -6,18 +6,18 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script type="text/javascript" src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- 
 	 <body>
 
-		
-			<img src="/assets/start.jpg" alt="rss feed" class="logo" />
+			<img src="/assets/logo.png" alt="rss feed" class="logo" />
 
-				
-
-		<!-- 	<div class="start">
+			<% if user_signed_in? %>
+				<div class="start">
 				<form action="sphider/search.php" method="get"> 
-					<input type="text" name="query" class="search rounded" id="query" value="">
+					<input type="text" name="query" class="search" id="query" value="">
 				</form>  
-			</div> -->
+			</div>					
+			<% end %>
+
+			
 	</body>
 </html>

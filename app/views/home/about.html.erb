@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The New Work Times</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script type="text/javascript" src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="mymodal">	
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">What is The New Work Times?</h4>
+      </div>
+      <div class="modal-body">
+        <p>If you’re an average reader, I’ve got your attention for 15 seconds. Ads, multimedia items and links push you to leave the page that you're reading every second making concentrating on a single text a hard job.
+        What if you could copy and paste the URL of the page you are reading and get back a proper, essential and clean page with the text you were reading?!
+		<br />
+		<br />
+		This is the way you can read and save articles on The New Work Times.</p>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<script>
+$('.close').on('click', function(event) {
+		event.preventDefault();
+		$('.mymodal').hide();
+	});
+</script>
+
+</body>
+</html>

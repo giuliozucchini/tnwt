@@ -20,3 +20,42 @@
 .logo {
 	font-weight: bold;
 }
+
+.container {
+	padding-left:3%;
+}
+
+input {
+	border-radius:15px; 
+	-moz-border-radius:15px; 
+	-webkit-border-radius:15px; 
+}
+
+.navbar-right {
+	padding-right:2%;
+	background-color: white;
+}
+
+
+.navbar-fixed-bottom {
+  height: 10px;
+}
+
+.signature {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-right: 1%;
+	color: white;
+}
+
+.mymodal {
+	padding-top: 130px;
+}
+
+div.alert-success {
+	width: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

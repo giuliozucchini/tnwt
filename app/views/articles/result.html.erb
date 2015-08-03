@@ -1,11 +1,59 @@
-<div class="wrapper">
-<h1 class="title"><%= @title %></h1>
-<br />
-<h4 class="author"><%= @author %></h4>
-<br/>
-<p class="content"><%= @content %></p>
-</div>
+         
+<div class="page-container">        
+        <!-- sidebar -->
+        <div class="col-md-2" id="sidebar" role="navigation">
+        	<%= render "share/index" %> 
+        </div>
+  	
+        <!-- main area -->
+        <div class="col-md-10">
+	        <div class="wrapper">
+				<h1 class="title"><%= @title %></h1>
+				 <span class="label label-danger" id="choose-it" value="click">Save</span>
+
+				 <span class="label label-warning" id="create-it" value="click">Create Report</span>
+
+		 		 <span class="label label-primary" id="print-it" >Print</span>
+			 	
+			 	 <br />
+			 	 <br />	
+
+			 		<div id="choose-report" style="display: none" value="click">
+			 		  	<% @reports.each do |report| %>
+					 		<span class="label label-default save-it" data-id=<%=report.id%> value="click"><%= report.title %></span>
+					    <% end %>
+					    <span class="label label-default" id="save-it" value="click"> New </span>						  	
+					</div>
 
 
+					<div id="create-input" style="display: none" value="click">
+					    <div id="choose-report" class="input-group input-group-sm">
+						  <span class="input-group-addon">Report</span>
+						  <%= form_for @report do |form| %>
+						   <%= form.text_field :title, class: "form-control", placeholder: "Type here the name of your new report..." %>
+						  <% end %>
+			
+						<!--   <input type="text" name="reportery" class="form-control" placeholder="Type here the name of your new report..."> -->
+						</div>						
+					 </div>
 
+		<!--  		 in javascript we want to add event listeners on click to the spans
+		 		 input text for the name of the report and a save button
+		 		  -->
+
+				<hr>
+				<p class="author">by <%= @author %><p>
+				<br/>
+
+				<div class="content">
+					<%= @content %></div>
+				<br />	
+				<br />
+				<br />
+
+			</div>
+       </div><!-- /.col-xs-12 main -->
+    </div><!--/.row-->
+  </div><!--/.container-->
+</div><!--/.page-container-->
 

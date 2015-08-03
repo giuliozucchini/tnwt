@@ -5,6 +5,9 @@ get '/' => "home#index";
 get '/about' => "home#about";
 get '/results' => "articles#new";
 
+get '/create' => "reports#new"
+get '/all' => "reports#show"
+
 devise_for :users,  path: "",
             path_names: {sign_in: "login", sign_up: "signup", sign_out: "logout", about: "about"},
             :controllers => { registrations: 'registrations' }

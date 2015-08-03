@@ -1,39 +1,50 @@
 
-<div class="container">
+<div class="wrap-log-sign">
 
   <h2>Sign up</h2>
-
+  <br />
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+   <div class="input-group input-group-sm col-md-3">
+      <span class="input-group-addon reg-first">Name</span>
+      <%= f.text_field :name, class: "form-control", id: "name" %>
     </div>
+        
+        <br />
+    
+    <div class="input-group input-group-sm col-md-3">
+      <span class="input-group-addon reg-first">Email</span>
+      <%= f.text_field :email, class: "form-control", id: "email" %>
+    </div>
+        
+        <br />
 
-    <div class="field">
+    <div class="input-group input-group-sm col-md-3">
+      <span class="input-group-addon reg-first">Password</span>
+      <%= f.text_field :password, class: "form-control", id: "password" , value: "8 characters minimum..."%>
+    </div>
+        <br />
+<!--     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off" %>
-    </div>
+    </div> -->
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+     <div class="input-group input-group-sm col-md-3">
+      <span class="input-group-addon reg-first">Password confirmation</span>
+      <%= f.text_field :password_confirmation, class: "form-control", id: "password_confirmation" %>
     </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
+    
+    <br />
+        <%= f.submit "Sign up", class: "btn btn-default btn-sm" %>
+   
+    
   <% end %>
+ <br />
 
-  <%= render "devise/shared/links" %>
 
 </div>

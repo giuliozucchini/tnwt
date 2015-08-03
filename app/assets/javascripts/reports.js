@@ -14,7 +14,6 @@ $(function() {
 		var report_id = $(event.currentTarget).attr("data-id");
 		var article_data = { article: { title: title, author: author, article_body: text, report_id: report_id }}
 
-		debugger
 		$.ajax({
 			url: '/articles', 
 			data: article_data, 
@@ -30,16 +29,17 @@ $(function() {
 			}
 		})
   });
-});
 
-var printReport = function (response) {
-		$('.report-title').empty();
-		$('.report-title').append(response.title);
-		$('.report-articles').empty();
-		response.articles.forEach(function(article) {
-				var listofArticles = '<li>' + article.title + '</li>';
-		  $('.report-articles').append(listofArticles);
-		});	
+
+	var printReport = function (response) {
+			$('.report-title').empty();
+			$('.report-title').append(response.title);
+			$('.report-articles').empty();
+			response.articles.forEach(function(article) {
+					var listofArticles = '<li>' + article.title + '</li>';
+			  $('.report-articles').append(listofArticles);
+			});	
 
 		}
 
+});

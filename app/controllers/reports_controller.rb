@@ -2,11 +2,13 @@ class ReportsController < ApplicationController
 
 	def create
 		@report = Report.new(report_params)
-		if @report.save
-			render @report
-
-		else
-			redirect_to root
+		
+		respond_to do |format|
+			if @report.save
+				format.js
+			else
+				redirect_to root
+			end
 		end
 	end
 

@@ -1,8 +1,15 @@
-<h1 class="title"><%= @article.title %></h1>	
-	<br />
-<p class="author">by <%= @article.author %><p>
-	<br/>
-<div class="content">
-<%= @article.content %></div>
-	<br />	
-	<br />
+
+  <div class="col-md-2" id="sidebar" role="navigation">
+        	<%= render "share/index" %> 
+        </div>
+
+  <div class="col-md-10">
+	<h1 class="title"><%= @title %></h1>	
+		<br />
+	<p class="author">by <%= @author %><p>
+		<br/>
+	<div class="content">
+	<%= @content %></div>
+		<br />	
+		<br />
+	</div>

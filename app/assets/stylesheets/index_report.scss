@@ -6,8 +6,15 @@
   padding: 0;
  }
 
+ ul#sidelist a:link {
+    color: #666666;
+
+}
+
 h3.report-title{
 	width: 550px;
+  font-size: 20px;
+  color: #333333;
 }
 
 div.partial-box {

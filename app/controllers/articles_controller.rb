@@ -3,7 +3,9 @@ require 'open-uri'
 class ArticlesController < ApplicationController
 
 	def show
-		render :show	
+		@title 
+		@author  
+		@content 
 	end
 
 	def new

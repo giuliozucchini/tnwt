@@ -1,12 +1,13 @@
 
 
-// SAVE THE ARTICLE
-// This AJAX request (POST) save the article in the database using 
-// The data-id of the report we have chosen
+// SHOW THE TITLE OF THE REPORT IN THE SIDEBAR
+// SHOW THE ARTICLE OF EACH REPORT IN THE SIDEBAR
 
 $(function() {
 
-	$(".save-it").click(function (event) {
+	$("#choose-report").on("click", ".save-it", function (event) {
+
+		console.log("saving article to report...");
 		var url = '/articles';
 		var title = $('.title').text();
 		var author = $('.author').text();
@@ -20,26 +21,63 @@ $(function() {
 			method: 'POST', 
 			dataType: 'json',
 			success: function(response){
-				console.log("Hello!");
-				printReport(response);
-				debugger
+				printReport(response);			
 			},
 			error: function(error){
 				console.log(error);
 			}
-		})
+		});
   });
 
 
 	var printReport = function (response) {
-			$('.report-title').empty();
-			$('.report-title').append(response.title);
-			$('.report-articles').empty();
-			response.articles.forEach(function(article) {
-					var listofArticles = '<li>' + article.title + '</li>';
-			  $('.report-articles').append(listofArticles);
-			});	
 
-		}
+		console.log("listing articles in this report...");
+		$('.report-title').html(response.title);
+		$('.report-articles').empty();
+	    response.articles.forEach(function(article) {
+			var listofArticles = '<li><a href="/articles/' + article.id + '">' + article.title + '</a></li>';
+			$('.report-articles').append(listofArticles);
+		});	
+	};
+
+
+// SHOW THE TITLE OF THE REPORT IN THE BUTTONS
+
+	$("#create-report-form").on('submit', function (event) {
+
+		console.log("creating report...");
+
+		event.preventDefault()
+		var url = '/reports';
+		var title = $("#report_title").val();
+		var report_data = { report: { title: title }};
+
+		$.ajax({
+			url: url, 
+			data: report_data, 
+			method: 'POST', 
+			dataType: 'json',
+			success: function(response){
+				displayButtonReport(response);
+				console.log(response);
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	});	
+
+
+	var displayButtonReport = function (response) {
+
+		console.log("adding report button...");
+	
+		var new_report = '<span class="label label-default save-it" value="click" data-id=' + response.id + '>' + response.title + '</span>'
+		$('#choose-report').prepend(new_report);
+		$("#create-input").toggle();
+	    $("#choose-report").show();
+
+	};
 
 });

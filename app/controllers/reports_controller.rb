@@ -1,14 +1,11 @@
 class ReportsController < ApplicationController
 
 	def create
-		@report = Report.new(report_params)
-		
-		respond_to do |format|
-			if @report.save
-				format.js
-			else
-				redirect_to root
-			end
+		@report = current_user.reports.create(report_params)
+		if @report.save
+			render json: @report
+		else
+			render json: @report.errors, status: :unprocessable_entity
 		end
 	end
 

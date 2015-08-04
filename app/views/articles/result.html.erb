@@ -1,4 +1,3 @@
-         
 <div class="page-container">        
         <!-- sidebar -->
         <div class="col-md-2" id="sidebar" role="navigation">
@@ -7,29 +6,31 @@
   	
         <!-- main area -->
         <div class="col-md-10">
-	        <div class="wrapper">
+	        <div class="wrapper testo">
 				<h1 class="title"><%= @title %></h1>
-				 <span class="label label-danger" id="choose-it" value="click">Save</span>
+				 <span class="label label-danger" id="choose-it" value="click" data-toggle="tooltip" data-placement="bottom" title="Click on a report to save your article">Save</span> &nbsp; 
+				 
+				 <span class="label label-success" id="my-reports" data-toggle="tooltip" data-placement="bottom" title="Check your reports">My reports</span> &nbsp; 
 
-				 <span class="label label-warning" id="create-it" value="click">Create Report</span>
+				 <span class="label label-warning" id="create-it" value="click" data-toggle="tooltip" data-placement="bottom" title="Create a bright new report">Create Report</span> &nbsp; 
 
-		 		 <span class="label label-primary" id="print-it" >Print</span>
-			 	
+		 		 <span class="label label-primary" id="print-it" data-toggle="tooltip" data-placement="bottom" title="Tired of the screen? Print it!">Print</span> &nbsp; 
+								 	
 			 	 <br />
 			 	 <br />	
 
-			 		<div id="choose-report" style="display: none" value="click">
+			 		<div id="choose-report", style="display: none" value="click">
 			 		  	<% @reports.each do |report| %>
 					 		<span class="label label-default save-it" data-id=<%=report.id%> value="click"><%= report.title %></span>
 					    <% end %>
-					    <span class="label label-default" id="save-it" value="click"> New </span>						  	
+					    <span class="label label-warning" id="save-it" value="click"> New </span>						  	
 					</div>
 
 
 					<div id="create-input" style="display: none" value="click">
 					    <div id="choose-report" class="input-group input-group-sm">
 						  <span class="input-group-addon">Report</span>
-						  <%= form_for @report, remote: true do |form| %>
+						  <%= form_for @report, html: { id: "create-report-form" } do |form| %>
 						   <%= form.text_field :title, class: "form-control", placeholder: "Type here the name of your new report..." %>
 						  <% end %>
 			

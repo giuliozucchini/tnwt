@@ -3,9 +3,9 @@ require 'open-uri'
 class ArticlesController < ApplicationController
 
 	def show
-		@title 
-		@author  
-		@content 
+		@article = Article.find(params[:id])
+		@report = @article.report
+		@articles = @report.articles
 	end
 
 	def new

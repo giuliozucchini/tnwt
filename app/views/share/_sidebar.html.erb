@@ -2,14 +2,27 @@
 
 	<div class="partial-box">
 
-		<h3 class="report-title sidetitle"><%= @report.title %></h3>
+		<h3 class="report-title sidetitle"><%= @report.title %>
+		<small><strong><%= link_to "x", report_path(@report), method: :delete,
+					data: {confirm: 'Are you sure?'} %></strong></small>
+		</h3>
+
+
+		<hr WIDTH="250px">
+
 		<div>
 		    <ul id='sidelist', class="report-articles">
 		  		<% @articles.each do |article| %>
-		  			<li><%= link_to article.title, article_path(article), 'data-report-id': @report.id %></li>
+		  			<li><%= link_to article.title, article_path(article), 'data-report-id': @report.id %>
+					<small><strong><%= link_to "x", report_article_path(@report, article), method: :delete,
+					data: {confirm: 'Are you sure?'} %></strong></small>
+		  			</li>
+
 				<%end%>
 			</ul>
 		</div>
-		
+		<span class="label label-primary" id="export-it">EXPORT IN PDF</span>
+
+
 	</div>
 

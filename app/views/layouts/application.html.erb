@@ -23,13 +23,19 @@
 				  <div class="form-group">
 				    <input type="text" name="query" class="form-control" placeholder="Type your URL here">
 				  </div>
-                   <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Copy paste the URL of an article">GO</button> 
+                   <button type="submit" class="btn btn-default">GO</button> 
 				</form>
 				<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Reports <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li><a href="#"><%= link_to "Create", "/create" %></a></li>
-		            <li><a href="#"><%= link_to "Your reports", "/all" %></a></li>
+		            <!-- DISPLAY ALL THE REPORTS IN A NEW PAGE -->
+		            <li><a href="#"><%= link_to "Your reports", dashboard_index_path %></a></li>
+		
+		
+					<!-- LIST OF ALL THE REPORTS -->
+		          	<% report_list.each do |report| %>
+	     				<li><%= link_to report.title, report_path(report) %></li>
+					<% end %>
 		          </ul>
 		        </li>
 				<li><p class="navbar-text"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p></li>

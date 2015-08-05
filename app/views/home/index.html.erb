@@ -2,10 +2,11 @@
 <div class="background_home">
 <img src="/assets/logo.png" alt="rss feed" class="logo" />
 
+ 
 <% if user_signed_in? %>
 	<div class="start">
 	<form method="get" action="/results"> 
-		<input type="text" name="query" class="search" id="query" value="">
+		<input type="text" name="query" class="search" id="query" value="" placeholder="   Type your URL here...">
 	</form>
 	</div>					
 <% end %>

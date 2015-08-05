@@ -5,7 +5,6 @@ get '/' => "home#index";
 get '/about' => "home#about";
 get '/results' => "articles#new";
 
-get '/create' => "reports#new"
 get '/all' => "reports#show"
 
 devise_for :users,  path: "",
@@ -15,6 +14,10 @@ devise_for :users,  path: "",
 
 resources :articles
 resources :reports
+resources :dashboard, only: :index
 
+resources :reports do
+	resources :articles
+end
 
 end

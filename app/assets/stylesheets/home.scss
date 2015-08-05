@@ -3,32 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 	img.logo {
-	    height: 80px;
+	    height: 50px;
 	    display: block;
 	    margin-left: auto;
 	    margin-right: auto;
-	    margin-top: 150px;
+	    margin-top: 250px;
 	}
 
 	.search {
-		margin-top: 30px;
-		width: 180px;
-		height: 30px;
+
+	   margin-top: 10px;
+		width: 480px;
+
 	}
 
 
-	.background_home {
-      top: 0;
-      bottom: 0;
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-      background-image: url("/assets/fond6.jpg");
-      -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
-	}
+.background_home {
+    z-index: -1;
+    width: 100%;
+    background-image: url("/assets/fond-splash.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    bottom:0;
+ }
 
 
 

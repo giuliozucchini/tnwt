@@ -1,0 +1,36 @@
+
+.welcome-report{
+	margin-right: 20%;
+	margin-left: 35px;;
+	margin-top: 7%;
+}
+
+
+p.report-box {
+	width: 300px;
+	height: 800px;
+	margin: 30px;  
+	padding: 20px;
+	display:inline-block;
+	background-color:rgb(255, 246, 246);
+    float:left;
+}
+
+.para {
+    font-size: 10px;
+}
+
+.background-dash {
+
+    z-index: -1;
+    width: 100%;
+    // background-image: url("/assets/fond-login.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    bottom:0;
+ }

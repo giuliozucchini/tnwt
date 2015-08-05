@@ -1,15 +1,20 @@
+  
   <div class="col-md-2" id="sidebar" role="navigation">
-    <%= render "share/sidebar" %> 
+    <%= render "share/sidebar" %>
   </div>
 
-  <div class="col-md-10">
-	<h1 class="title"><%= @article.title %></h1>	
-		<br />
-	<p class="author">by <%= @article.author %><p>
-		<br/>
-	<div class="content">
-	<%= @article.article_body.html_safe %></div>
-		<br />	
-		<br />
+
+  <div class="col-md-8 col-md-offset-2 wrapper testo">
+		<h1 class="title"><%= @article.title %></h1>	
+			<br />
+		<p class="author"> <%= @article.author %><p>
+			<br/>
+		<div class="content">
+		<%= @article.article_body.html_safe %></div>
+			<br />	
+			<br />
+		</div>
 	</div>
+  </div>
+
 

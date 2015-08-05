@@ -15,10 +15,22 @@ class ReportsController < ApplicationController
 		@articles = @report.articles
 	end
 
+	def dahsboard
+		@report_list = Report.all
+	end
+
+	def destroy
+		report = Report.find(params[:id])
+		report.destroy
+		redirect_to dashboard_index_path
+	end
+
 	private
 
 	def report_params
 		params.require(:report).permit(:title)
 	end
+
+	
 
 end

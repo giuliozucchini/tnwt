@@ -1,0 +1,19 @@
+
+<div class="background-dash">
+	<div class="welcome-report">
+		<p class="welcome">Hello <strong><%= current_user.name %></strong>. This is the list of your reports:</p>
+	</div>
+
+
+		<div class="dash-unit">
+				<!-- LIST OF ALL THE REPORTS -->
+				<% report_list.each do |report| %>
+				<p class="report-box" >
+					<strong><%= link_to report.title, report_path(report) %><br /></strong>
+						<% report.articles.each do | article | %>
+					<%= link_to article.title, report_article_path(report, article), class: :para %><br />
+					<% end %>
+				<% end %>
+				</p>
+		</div>
+</div>

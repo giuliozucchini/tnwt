@@ -55,8 +55,12 @@ div.alert-success {
 }
 
 .navbar-custom {
-	padding-right:2%;
-	background-color: white;
+  padding-right:2%;
+  background-color: rgb(247, 247, 247);
+}
+
+a{
+  color: #3D3D3D;
 }
 
 .save-it:hover {
@@ -74,9 +78,31 @@ div.alert-success {
 
 .testo {
    border-left: 1px solid;
-   padding-left: 70px;
    border-color: #E6E6E6;
+   padding-left: 5%;
+   padding-right: 10%;
 }
 
 
+span.label.label-default.save-it {
+  background-color: #A5BCBE;
+  color: rgb(255, 255, 255);
+}
 
+.label{
+	font-weight:normal !important;
+	letter-spacing: 1px;
+	border-radius: 0em;
+}
+
+.label-warning {
+	background-color: #FFBD14;
+}
+
+.label-danger {
+  background-color: #FF5700;
+}
+
+.label-primary {
+  background-color: #2496F7;
+}

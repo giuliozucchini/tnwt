@@ -92,4 +92,13 @@ $(function () {
 	});
 })
 
+$(function() {
+	$("#export-it").on("click", function() {
+		debugger;
+		$(".plus-loader").removeClass("hidden");
+		debugger;
+		$(".testo").addClass("hidden");
+	});
+})
+
 

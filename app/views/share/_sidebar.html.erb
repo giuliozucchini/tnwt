@@ -1,4 +1,8 @@
 	<br />
+<!-- 	 <div class="plus-loader hidden">
+		Loading…
+	</div> -->
+
 	<div class="partial-box">
 
 		<h3 class="report-title sidetitle">
@@ -26,8 +30,7 @@
 		<span class="label label-primary deleteit" >
 			<%= link_to "DELETE THE REPORT", report_path(@report), class: "deletebutton" , method: :delete %>
 		</span>
-
-		<!-- <span class="label label-export" id="export-it" format="pdf" action="export" >EXPORT IN PDF</span> -->
 		<%= link_to "EXPORT AS PDF", "/reports/#{@report.id}/export.pdf", :format => "pdf", class: "label label-export", id: "export-it" %>
+	
 	</div>
 

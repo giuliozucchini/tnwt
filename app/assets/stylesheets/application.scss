@@ -99,6 +99,19 @@ span.label.label-default.save-it {
 
 }
 
+
+.deletebutton {
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
+
+.deletebutton:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
+
 .label-warning {
 	background-color: #FFBD14;
 }
@@ -108,5 +121,15 @@ span.label.label-default.save-it {
 }
 
 .label-primary {
-  background-color: #2496F7;
+display:inline-block;
+}
+
+
+.label-delete {
+   background-color: #FF4949;
+
+}
+
+.linea {
+	width: 250px;
 }

@@ -7,8 +7,6 @@ $(function() {
 
 
 	$("#choose-report").on("click", ".save-it", function (event) {
-
-		console.log("saving article to report...");
 		var url = '/articles';
 		var title = $('.title').text();
 		var author = $('.author').text();
@@ -32,13 +30,12 @@ $(function() {
 
 
 	var printReport = function (response) {
-
-		console.log("listing articles in this report...");
 		$('.report-title').html(response.title);
 		$('.report-articles').empty();
 	    response.articles.forEach(function(article) {
-			var listofArticles = '<li><a href="/articles/' + article.id + '">' + article.title + '</a></li>';
-			$('.report-articles').append(listofArticles);
+	    	var deleteButton = '<small><a href="/articles/' + article.id + '" data-method= "delete">x </a></small>';
+			var article = '<li><a href="/articles/' + article.id + '">' + article.title + '</a></li>';
+			$('.report-articles').append(article);
 		});	
 	};
 
@@ -69,23 +66,17 @@ $(function() {
 		});
 	});	
 
-
 	var displayButtonReport = function (response) {
-
 		console.log("adding report button...");
-	
 		var new_report = '<span class="label label-default save-it" value="click" data-id=' + response.id + '>' + response.title + '</span>'
 		$('#choose-report').prepend(new_report);
 		$("#create-input").toggle();
 	    $("#choose-report").show();
-
 	};
 
 });
 
-
 $(function () {
-
 	$("h3.sidetitle").hover(function(event){
 	    $(event.currentTarget).children("small").removeClass("hidden");
 	},function(event) {
@@ -100,3 +91,5 @@ $(function () {
 		$(event.currentTarget).children("small").addClass("hidden");
 	});
 })
+
+

@@ -1,16 +1,11 @@
 	<br />
-
 	<div class="partial-box">
 
 		<h3 class="report-title sidetitle">
-			<small class="hidden">
-				<strong><%= link_to "x", report_path(@report), method: :delete, data: {confirm: 'Are you sure?'} %>
-				</strong>
-			</small> 
 			<%= @report.title %>
 		</h3>
 
-		<hr WIDTH="250px">
+		<hr class="linea">
 
 		<div>
 		    <ul id='sidelist', class="report-articles">
@@ -18,19 +13,23 @@
 		  			<li class="titoli">
 						
 						<small class="hidden">
-							<strong><%= link_to "x", report_article_path(@report, article), method: :delete,
-						data: {confirm: 'Are you sure?'} %>
+							<strong><%= link_to "x", report_article_path(@report, article), method: :delete %>
 							</strong>
 						</small>
-		  				
 		  				<%= link_to article.title, article_path(article), :data => { :report_id => @report.id } %>
 		  			</li>
 
 				<%end%>
 			</ul>
 		</div>
-		<span class="label label-primary" id="export-it">EXPORT IN PDF</span>
 
+<!-- 		add method: :delete %> -->
+<!-- 		add method: :export %> -->
 
+		<span class="label label-primary" >
+			<%= link_to "DELETE THE REPORT", report_path(@report), class: "deletebutton" , method: :delete, data: {confirm: 'Are you sure?'} %>
+		</span>
+
+		<span class="label label-export" id="export-it">EXPORT IN PDF</span>
 	</div>
 

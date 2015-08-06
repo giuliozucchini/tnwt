@@ -23,7 +23,7 @@
 							</strong>
 						</small>
 		  				
-		  				<%= link_to article.title, article_path(article), 'data-report-id': @report.id %>
+		  				<%= link_to article.title, article_path(article), :data => { :report_id => @report.id } %>
 		  			</li>
 
 				<%end%>

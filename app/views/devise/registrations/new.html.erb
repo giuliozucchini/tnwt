@@ -22,21 +22,21 @@
         <br />
 
     <div class="input-group input-group-sm col-md-3">
-      <span class="input-group-addon reg-first">Password</span>
-      <%= f.text_field :password, class: "form-control", id: "password" , value: "8 characters minimum..."%>
+      <span class="input-group-addon reg-first">Password - 8 ch. min -</span>
+      <%= f.text_field :password, class: "form-control", id: "password" , value: "asdfghj", type: "password" %>
     </div>
         <br />
-<!--     <div class="field">
+<!--  <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div> -->
+      <%= f.password_field :password, autocomplete: "off", type: "password" %>
+    </div> --> 
 
      <div class="input-group input-group-sm col-md-3">
       <span class="input-group-addon reg-first">Password confirmation</span>
-      <%= f.text_field :password_confirmation, class: "form-control", id: "password_confirmation" %>
+      <%= f.text_field :password_confirmation, class: "form-control", value: "asdfghj", id: "password_confirmation", type: "password" %>
     </div>
     
     <br />

@@ -26,16 +26,16 @@ class ReportsController < ApplicationController
 	end
 
 	def export
-		report = params[:id]
-		@report = Report.fing(id)
-	    
+		id = params[:id]
+		@report = Report.find(id)
+	    @articles = @report.articles
+
  		  respond_to do |format|
 		      format.html
 		      format.pdf do
 		        render pdf: "report-#{id}",   # Excluding ".pdf" extension.
 	        	   encoding: 'UTF-8'
 	      end
-
 	    end
 	end
 

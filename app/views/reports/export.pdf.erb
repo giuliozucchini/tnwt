@@ -1,0 +1,17 @@
+
+  <div class="col-md-8 col-md-offset-2 wrapper testo">
+  		<%= @report.title %>
+		<% @articles.each do |a| %>
+		<h1 class="title"><%= a.title %></h1>
+		<br />	
+		<p class="author"> <%= a.author %><p>
+		<br />	
+		<div class="content">
+		<%= a.article_body.html_safe %></div>
+		<br />	
+		<br />
+		<br />
+		<% end %>
+		</div>
+	</div>
+  </div>

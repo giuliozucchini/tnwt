@@ -5,6 +5,7 @@ get '/' => "home#index";
 get '/about' => "home#about";
 get '/results' => "articles#new";
 get '/articles/:id/export' => 'articles#export'
+get '/reports/:id/export' => 'reports#export'
 
 get '/all' => "reports#show"
 

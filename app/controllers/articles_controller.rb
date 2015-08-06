@@ -40,6 +40,29 @@ class ArticlesController < ApplicationController
 		redirect_to report_path(params[:report_id])
 	end
 
+	# def export 
+	# 	id = params[:id]
+	# 	# url = "http://localhost:3000/articles/#{id}" 
+	# 	pdf_name = "/article-#{id}.pdf"
+	# 	# kit = PDFKit.new(url)
+	# 	kit = PDFKit.new("http://localhost:3000/articles/#{id}")
+	# 	# file = kit.to_file("public/" + pdf_path)
+	# 	path = kit.to_file("desktop")
+	# 	redirect_to pdf_name
+	# end
+
+	def export
+		id = params[:id]
+		@article = Article.find(id)
+	    respond_to do |format|
+	      format.html
+	      format.pdf do
+	        render pdf: "article-#{id}",   # Excluding ".pdf" extension.
+	        	   encoding: 'UTF-8'
+	      end
+	    end
+	end
+
 	private
 
 	def article_params

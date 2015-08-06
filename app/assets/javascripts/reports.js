@@ -5,6 +5,7 @@
 
 $(function() {
 
+
 	$("#choose-report").on("click", ".save-it", function (event) {
 
 		console.log("saving article to report...");
@@ -81,3 +82,21 @@ $(function() {
 	};
 
 });
+
+
+$(function () {
+
+	$("h3.sidetitle").hover(function(event){
+	    $(event.currentTarget).children("small").removeClass("hidden");
+	},function(event) {
+		$(event.currentTarget).children("small").addClass("hidden");
+	});
+})
+
+$(function () {
+	$(".titoli").hover(function(event){
+	    $(event.currentTarget).children("small").removeClass("hidden");
+	},function(event) {
+		$(event.currentTarget).children("small").addClass("hidden");
+	});
+})

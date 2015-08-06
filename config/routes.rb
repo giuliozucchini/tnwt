@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 get '/' => "home#index";
 get '/about' => "home#about";
 get '/results' => "articles#new";
+get '/articles/:id/export' => 'articles#export'
 
 get '/all' => "reports#show"
 

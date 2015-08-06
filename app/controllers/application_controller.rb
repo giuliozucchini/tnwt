@@ -8,5 +8,4 @@ class ApplicationController < ActionController::Base
   	current_user.reports
   end
 
-
 end

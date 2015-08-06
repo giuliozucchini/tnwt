@@ -1,20 +1,26 @@
+		
+	<div class="background-dash">
+		
+		<div class="welcome-report">
+			<p class="welcome">Hello <strong><%= current_user.name %></strong>. This is the list of your reports:</p>
+		</div>
 
-
-	<div class="welcome-report">
-		<p class="welcome">Hello <strong><%= current_user.name %></strong>. This is the list of your reports:</p>
-	</div>
-
-
-		<div class="dash-unit">
+		<div id="container" class="container dash-unit">	
+		
 				<!-- LIST OF ALL THE REPORTS -->
 				<% report_list.each do |report| %>
-				<p class="report-box" >
-					<strong><%= link_to report.title, report_path(report) %><br /></strong>
-						<% report.articles.each do | article | %>
-					<%= link_to article.title, report_article_path(report, article), class: :para %><br />
-					<% end %>
+					<div class="report-box item" >
+						<strong><%= link_to report.title, report_path(report) %><br /></strong>
+							<% report.articles.each do | article | %>
+						 . <%= link_to article.title, report_article_path(report, article), class: :para %><br />
+						<% end %>
+					</div>
 				<% end %>
-				</p>
 		</div>
+		<br/>
+		<br/>
+	</div>
+	
+
 
 

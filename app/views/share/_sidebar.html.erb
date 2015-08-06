@@ -2,19 +2,27 @@
 
 	<div class="partial-box">
 
-		
-		<h3 class="report-title sidetitle"><small><strong><%= link_to "x", report_path(@report), method: :delete,
-		data: {confirm: 'Are you sure?'} %></strong></small> <%= @report.title %></h3>
-
+		<h3 class="report-title sidetitle">
+			<small class="hidden">
+				<strong><%= link_to "x", report_path(@report), method: :delete, data: {confirm: 'Are you sure?'} %>
+				</strong>
+			</small> 
+			<%= @report.title %>
+		</h3>
 
 		<hr WIDTH="250px">
 
 		<div>
 		    <ul id='sidelist', class="report-articles">
 		  		<% @articles.each do |article| %>
-		  			<li>
-						<small><strong><%= link_to "x", report_article_path(@report, article), method: :delete,
-						data: {confirm: 'Are you sure?'} %></strong></small>
+		  			<li class="titoli">
+						
+						<small class="hidden">
+							<strong><%= link_to "x", report_article_path(@report, article), method: :delete,
+						data: {confirm: 'Are you sure?'} %>
+							</strong>
+						</small>
+		  				
 		  				<%= link_to article.title, article_path(article), 'data-report-id': @report.id %>
 		  			</li>
 

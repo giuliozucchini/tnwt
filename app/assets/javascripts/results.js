@@ -26,3 +26,10 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+
+$(function(){
+  $('#container').masonry({
+    itemSelector : '.item',
+    columnWidth : 240,
+  });
+});

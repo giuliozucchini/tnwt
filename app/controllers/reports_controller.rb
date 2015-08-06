@@ -25,12 +25,24 @@ class ReportsController < ApplicationController
 		redirect_to dashboard_index_path
 	end
 
+	def export
+		report = params[:id]
+		@report = Report.fing(id)
+	    
+ 		  respond_to do |format|
+		      format.html
+		      format.pdf do
+		        render pdf: "report-#{id}",   # Excluding ".pdf" extension.
+	        	   encoding: 'UTF-8'
+	      end
+
+	    end
+	end
+
 	private
 
 	def report_params
 		params.require(:report).permit(:title)
 	end
-
-	
 
 end

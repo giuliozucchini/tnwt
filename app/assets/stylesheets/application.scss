@@ -49,6 +49,10 @@ input {
 	border: 0;
 }
 
+.modal-body {
+  padding: 30px;
+}
+
 div.alert-success {
 	width: 200px;
 	display: block;
@@ -120,16 +124,23 @@ span.label.label-default.save-it {
   background-color: #FF5700;
 }
 
+.deleteit{
+ background-color: #FF4949;
+}
+
 .label-primary {
-display:inline-block;
+  background-color: #2A87D7;
+  display:inline-block;
 }
 
 
-.label-delete {
-   background-color: #FF4949;
+.label-export {
+   background-color: #716300;
 
 }
 
 .linea {
 	width: 250px;
 }
+
+

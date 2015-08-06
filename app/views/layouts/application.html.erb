@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 	<nav class="navbar navbar-custom">
 		<ul class="nav navbar-nav logo">
 	 		<li><%= link_to 'The New Work Times', "/" %></li>
@@ -25,14 +24,14 @@
 				</form>
 				<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Reports <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
+		          <ul class="dropdown-menu dropdown-toggle" >
 		            <!-- DISPLAY ALL THE REPORTS IN A NEW PAGE -->
-		            <li><a href="#"><%= link_to "Your reports", dashboard_index_path %></a></li>
+		            <li><a href="#"><%= link_to "Your reports", dashboard_index_path, class: "dropdown-toogle" %></a></li>
 		
 		
 					<!-- LIST OF ALL THE REPORTS -->
 		          	<% report_list.each do |report| %>
-	     				<li><%= link_to report.title, report_path(report) %></li>
+	     				<li><%= link_to report.title, report_path(report), class: "dropdown-toogle"%></li>
 					<% end %>
 		          </ul>
 		        </li>
@@ -63,5 +62,5 @@
 </div>
 
 </body>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', class: "signature" %>
 </html>

@@ -54,12 +54,13 @@ class ArticlesController < ApplicationController
 	def export
 		id = params[:id]
 		@article = Article.find(id)
-	    respond_to do |format|
-	      format.html
-	      format.pdf do
-	        render pdf: "article-#{id}",   # Excluding ".pdf" extension.
-	        	   encoding: 'UTF-8'
+	      respond_to do |format|
+		      format.html
+		      format.pdf do
+		      render pdf: "article-#{id}",   # Excluding ".pdf" extension.
+		      encoding: 'UTF-8'
 	      end
+
 	    end
 	end
 
